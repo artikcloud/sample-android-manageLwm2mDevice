@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ACdm</string>
+    <string name="dm_tasks_instruction">"Click a button to read or write device properties or reboot the device"</string>
+    <string name="read_button_txt">"READ from device"</string>
+    <string name="write_button_txt">"WRITE to device"</string>
+    <string name="reboot_button_txt">"Reboot device"</string>
+    <string name="get_property_button_txt">"Read properties from ARTIK Cloud"</string>
+
+    <string name="properties_from_ack_txt">Properties of the device from ARTIK Cloud</string>
+    <string name="properties_from_akc">...</string>
+    <string name="device_management_screen_title">Manage LWM2M Device</string>
+    <string name="task_apicall_response">Response of device managment task api call will be here ...</string>
+
+
+</resources>
