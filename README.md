@@ -14,10 +14,13 @@ This repository contains the following software:
 Demo
 -------------
 
- 1. Step 1
+ 1. Launch the app on your Android phone. 
+ 2. Login using your account. <br />
 ![Login](./img/screen_1_login.png)
- 2. ![getProperties](./img/screen_2_readPropFromAKC.png)
- 3. ![writeToDevice](./img/screen_3_writePropToDevice.png)
+ 3. Click the button to get the properties of the device from ARTIK Cloud. Some properties are shown on UI as the following:
+![getProperties](./img/screen_2_readPropFromAKC.png)
+ 3. Click one of the buttons to request reading the properties from, writing timezone property to, and reboot the remote LWM2M device. The following is the example of writing a new timezone property to the device and then confirm that the property has been updated from device:
+![writeToDevice](./img/screen_3_writePropToDevice.png)
 
 Android Application
 -------------
