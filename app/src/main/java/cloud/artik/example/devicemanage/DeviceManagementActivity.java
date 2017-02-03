@@ -36,6 +36,7 @@ import java.util.Map;
 import cloud.artik.client.ApiCallback;
 import cloud.artik.client.ApiException;
 import cloud.artik.model.MetadataEnvelope;
+import cloud.artik.model.Task;
 import cloud.artik.model.TaskEnvelope;
 import cloud.artik.model.TaskParameters;
 import cloud.artik.model.TaskRequest;
@@ -307,7 +308,7 @@ public class DeviceManagementActivity extends Activity {
     }
 
 ///// Helpers
-    private void processFailure(final String context, ApiException exc) {
+    private void processFailure(final String context, Exception exc) {
         String errorDetail = " onFailure with exception" + exc;
         Log.w(context, errorDetail);
         exc.printStackTrace();
@@ -329,10 +330,26 @@ public class DeviceManagementActivity extends Activity {
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                String resultStr = taskEnvelope.toString();
-                Log.d(TAG, resultStr);
+                Log.d(TAG, taskEnvelope.toString());
                 mDMTaskAPICallResponse.setText(null);//clean previous text
-                mDMTaskAPICallResponse.setText(resultStr);
+
+                String prettyResponse = "";
+                try {
+                    Task t = taskEnvelope.getData();
+
+                    // selectively print out some of the fields in the response
+                    prettyResponse = "taskType: " + t.getTaskType() + "\n"
+                            + "property: " + t.getProperty() + "\n"
+                            + "dids: " + t.getDids().toString() + "\n"
+                            + "taskParameters: " + t.getTaskParameters().toString() + "\n"
+                            + "createdOn: " + t.getCreatedOn() + "\n"
+                            + "status: " + t.getStatus() + "\n";
+
+                } catch (Exception exc) {
+                    processFailure(TAG + " handleTaskAPISuccessOnUIThread ", exc);
+
+                }
+                mDMTaskAPICallResponse.setText(prettyResponse);
             }
         });
     }
