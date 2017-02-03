@@ -55,7 +55,6 @@ public class ArtikCloudSession {
         mDeviceIDArray.add(0, DEVICE_ID);
     }
 
-
     public void setAccessToken(String token) {
         if (token == null || token.length() <= 0) {
             Log.e(TAG, "Attempt to set an invalid token");

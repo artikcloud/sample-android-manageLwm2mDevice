@@ -24,6 +24,7 @@
             android:id="@+id/readBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:textSize="9sp"
             android:text="@string/read_button_txt" />
 
@@ -31,6 +32,7 @@
             android:id="@+id/writeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:textSize="9sp"
             android:text="@string/write_button_txt" />
 
@@ -41,6 +43,7 @@
             android:id="@+id/rebootBtn"
             android:layout_width= "wrap_content"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:textSize="9sp"
             android:text="@string/reboot_button_txt" />
     </LinearLayout>
@@ -59,6 +62,7 @@
         android:id="@+id/getPropertiesBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:textSize="9sp"
         android:text="@string/get_property_button_txt" />
 

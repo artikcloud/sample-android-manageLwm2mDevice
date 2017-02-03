@@ -45,15 +45,17 @@ import cloud.artik.model.UserEnvelope;
 
 public class DeviceManagementActivity extends Activity {
     private static final String TAG = DeviceManagementActivity.class.getSimpleName();
-    private TextView mGetPropertiesCallResponse;
-    private TextView mDMTaskAPICallResponse;
+
     private Button mReadBtn;
     private Button mWriteBtn;
     private Button mRebootBtn;
     private Button mGetPropertiesBtn;
+    private TextView mGetPropertiesCallResponse;
+    private TextView mDMTaskAPICallResponse;
 
     private ApiCallback<TaskEnvelope> mCallback = null;
 
+    private int mTimezoneIdx = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +78,6 @@ public class DeviceManagementActivity extends Activity {
                 }
             }
         });
-        mWriteBtn.setEnabled(true);
 
         mReadBtn = (Button)findViewById(R.id.readBtn);
         mReadBtn.setOnClickListener(new View.OnClickListener() {
@@ -250,7 +251,7 @@ public class DeviceManagementActivity extends Activity {
         writeDeviceTaskRequest.dids(ArtikCloudSession.getInstance().getDeviceIDArray());
         writeDeviceTaskRequest.taskType("W");
         writeDeviceTaskRequest.setProperty("deviceProperties.device.timezone");
-        writeDeviceTaskRequest.taskParameters(new TaskParameters().value("Pacific/California"));
+        writeDeviceTaskRequest.taskParameters(new TaskParameters().value(getNewTimezone()));
         try {
             ArtikCloudSession.getInstance().getDevicesManagementApi().createTasksAsync(writeDeviceTaskRequest, mCallback);  // async sample call
         } catch (ApiException exc) {
@@ -341,6 +342,22 @@ public class DeviceManagementActivity extends Activity {
         mWriteBtn.setEnabled(true);
         mRebootBtn.setEnabled(true);
         mGetPropertiesBtn.setEnabled(true);
+    }
+
+    private String getNewTimezone() {
+        String timezone = "America/Los_Angeles";
+        switch (mTimezoneIdx % 3) {
+            case 1:
+                timezone = "Asia/Shanghai";
+                break;
+            case 2:
+                timezone = "Europe/Paris";
+                break;
+            default:
+                break;
+        }
+        mTimezoneIdx++;
+        return timezone;
     }
 
     /* Example of device properties JSON
@@ -449,8 +466,7 @@ public class DeviceManagementActivity extends Activity {
                            + BATTERY_LEVEL + ":" + batteryLevel.toString() + "\n"
                            + FIRMWARE_VERSION + ":" + firmwareVersionProp.toString() + "\n"
                            +  SERIAL_NUMBER + ":" + serialNumberProp + "\n";
-
-               }catch (Exception e) {
+               } catch (Exception e) {
                    Log.v("", "handleGetProperties run into Exception");
                    Log.v("", "resultStr " + resultStr);
                    e.printStackTrace();
