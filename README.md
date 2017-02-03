@@ -11,9 +11,15 @@ This repository contains the following software:
 
  - An Android application running on the Android phone
 
-Android Application
+Demo
 -------------
 
+ # ![Login](./img/screen_1_login.png)
+ # ![getProperties](./img/screen_2_readPropFromAKC.png)
+ # ![writeToDevice](./img/screen_3_writePropToDevice.png)
+
+Android Application
+-------------
 *TODO*
 
 More about ARTIK Cloud
