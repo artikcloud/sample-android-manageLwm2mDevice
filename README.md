@@ -14,13 +14,26 @@ This repository contains the following software:
 Demo
 -------------
 
+ 1. On the terminal, run the following command to start a [LWM2M Client emulator](https://github.com/artikcloud/artikcloud-lwm2m-c):
+
+   ```
+   %> akc_client -n -u coaps://coaps-api.artik.cloud:5686 -d YOUR_DEVICE_ID -t YOUR_DEVICE_TOKEN
+   ```
+ <br />The device (lwm2m client) is connected to ARTIK Cloud. Once the device receives and responds to the LWM2M operations from ARTIK Cloud, it prints out the info in the terminal. 
  1. Launch the app on your Android phone. 
  2. Login using your account. <br />
 ![Login](./img/screen_1_login.png)
  3. Click "READ PROPERTIES FROM ARTIK Cloud" to get the properties of the device from [Device Mirror](https://developer.artik.cloud/documentation/advanced-features/device-management.html#device-mirror) in ARTIK Cloud. Some properties are shown on the screen as the following: <br />
 ![getProperties](./img/screen_2_readPropFromAKC.png)
- 3. Click one of the three buttons on the top to request reading the properties from, writing a new timezone to, or rebooting the remote LWM2M device. The following screenshot shows the case of writing "America/Los_Angeles" timezone to the device. After the remote LWM2M device updates the timezone to the new value, click "READ PROPERTIES FROM ARTIK Cloud" and observe that the response from ARTIK Cloud confirms that the timezone has changed on device and on Device Mirror of ARTIK Cloud.<br />
+ 3. Click one of the three buttons on the top to request reading the properties from, writing a new timezone to, or rebooting the remote LWM2M device. The following shows the case of writing "America/Los_Angeles" timezone to the device. The remote LWM2M device acts on operation as following output in the terminal:
+ 
+   ```
+   > Resource Changed: /3/0/15
+   ```
+<br />On the Andriod app, click "READ PROPERTIES FROM ARTIK Cloud" and observe that the response from ARTIK Cloud confirms that the timezone has changed on device and on Device Mirror of ARTIK Cloud.<br />
 ![writeToDevice](./img/screen_3_writePropToDevice.png)
+ 4. Go to Developer Dashboard and see the status of the tasks initiated by the Android app as the following:<br />
+![Task status in Developer Dashboard](./img/devdashboard_task_result.png)
 
 Android Application
 -------------
