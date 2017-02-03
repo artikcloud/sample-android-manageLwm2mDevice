@@ -14,7 +14,8 @@ This repository contains the following software:
 Demo
 -------------
 
- 1. ![Login](./img/screen_1_login.png)
+ 1. Step 1
+![Login](./img/screen_1_login.png)
  2. ![getProperties](./img/screen_2_readPropFromAKC.png)
  3. ![writeToDevice](./img/screen_3_writePropToDevice.png)
 
