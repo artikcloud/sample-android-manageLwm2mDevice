@@ -17,9 +17,9 @@ Demo
  1. Launch the app on your Android phone. 
  2. Login using your account. <br />
 ![Login](./img/screen_1_login.png)
- 3. Click the button to get the properties of the device from ARTIK Cloud. Some properties are shown on UI as the following:
+ 3. Click "READ PROPERTIES FROM ARTIK Cloud" to get the properties of the device from [Device Mirror](https://developer.artik.cloud/documentation/advanced-features/device-management.html#device-mirror) in ARTIK Cloud. Some properties are shown on the screen as the following: <br />
 ![getProperties](./img/screen_2_readPropFromAKC.png)
- 3. Click one of the buttons to request reading the properties from, writing timezone property to, and reboot the remote LWM2M device. The following is the example of writing a new timezone property to the device and then confirm that the property has been updated from device:
+ 3. Click one of the three buttons on the top to request reading the properties from, writing a new timezone to, or rebooting the remote LWM2M device. The following screenshot shows the case of writing "America/Los_Angeles" timezone to the device. After the remote LWM2M device updates the timezone to the new value, click "READ PROPERTIES FROM ARTIK Cloud" and observe that the response from ARTIK Cloud confirms that the timezone has changed on device and on Device Mirror of ARTIK Cloud.<br />
 ![writeToDevice](./img/screen_3_writePropToDevice.png)
 
 Android Application
