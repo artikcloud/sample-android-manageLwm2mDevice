@@ -1,4 +1,4 @@
-# Android App manages manages a remote lwm2m device
+# Android App manages a remote lwm2m device
 
 *TODO*
 
@@ -19,7 +19,7 @@ Demo
    ```
    %> akc_client -n -u coaps://coaps-api.artik.cloud:5686 -d YOUR_DEVICE_ID -t YOUR_DEVICE_TOKEN
    ```
- <br />The device (lwm2m client) is connected to ARTIK Cloud. Once the device receives and responds to the LWM2M operations from ARTIK Cloud, it prints out the info in the terminal. 
+ The device (lwm2m client) is now connected to ARTIK Cloud. Once the device receives and responds to the LWM2M operations from ARTIK Cloud, it prints out the info in the terminal. 
  1. Launch the app on your Android phone. 
  2. Login using your account. <br />
 ![Login](./img/screen_1_login.png)
@@ -30,12 +30,12 @@ Demo
    ```
    > Resource Changed: /3/0/15
    ```
-<br />On the Andriod app, click "READ PROPERTIES FROM ARTIK Cloud" and observe that the response from ARTIK Cloud confirms that the timezone has changed on device and on Device Mirror of ARTIK Cloud.<br />
+On the Andriod app, click "READ PROPERTIES FROM ARTIK Cloud" and observe that the response from ARTIK Cloud confirms that the timezone has changed on device and on Device Mirror of ARTIK Cloud.<br />
 ![writeToDevice](./img/screen_3_writePropToDevice.png)
  4. Go to Developer Dashboard and see the status of the tasks initiated by the Android app as the following:<br />
 ![Task status in Developer Dashboard](./img/devdashboard_task_result.png)
 
-Android Application
+Setup / Installation
 -------------
 *TODO*
 
