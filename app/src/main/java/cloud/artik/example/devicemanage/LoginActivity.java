@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Samsung Electronics Co., Ltd.
+ * Copyright (C) 2017 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public class LoginActivity extends Activity {
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String uri) {
-                if (uri.startsWith(ArtikCloudSession.REDIRECT_URL)) {
+                if (uri.startsWith(Config.REDIRECT_URL)) {
                     // Login succeed or back to login after signup
 
                     String ACCESS_TOKEN = "access_token=";

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Samsung Electronics Co., Ltd.
+ * Copyright (C) 2017 Samsung Electronics Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +24,10 @@ import cloud.artik.api.DevicesManagementApi;
 import cloud.artik.api.UsersApi;
 import cloud.artik.client.ApiClient;
 
+import static cloud.artik.example.devicemanage.Config.DEVICE_ID;
+
 public class ArtikCloudSession {
     private final static String TAG = ArtikCloudSession.class.getSimpleName();
-
-    // Copy them from the corresponding application in the Developer Dashboard
-    public static final String CLIENT_ID = "f10a2e974ae34b8aaefb10867765f7f5";// public static final String CLIENT_ID = "<YOUR CLIENT ID>";
-    public static final String REDIRECT_URL = "myapp://redirect";
-
-    // Copy them from the Device Info screen in My ARTIK Cloud
-    public static final String DEVICE_TYPE_ID = "dt853651a92cc9427b8d288aa82d3eb6b2";// Demo Motor in Demo account
-    public static final String DEVICE_ID = "3b211218744942a9a9d906e977af079d";//motor
 
     public static final String ARTIK_CLOUD_AUTH_BASE_URL = "https://accounts.artik.cloud";
 
@@ -87,7 +81,7 @@ public class ArtikCloudSession {
     public String getAuthorizationRequestUri() {
         //https://accounts.artik.cloud/authorize?client=mobile&client_id=xxxx&response_type=token&redirect_uri=android-app://redirect
         return ARTIK_CLOUD_AUTH_BASE_URL + "/authorize?client=mobile&response_type=token&" +
-                "client_id=" + CLIENT_ID + "&redirect_uri=" + REDIRECT_URL;
+                "client_id=" + Config.CLIENT_ID + "&redirect_uri=" + Config.REDIRECT_URL;
     }
 
     public void reset() {

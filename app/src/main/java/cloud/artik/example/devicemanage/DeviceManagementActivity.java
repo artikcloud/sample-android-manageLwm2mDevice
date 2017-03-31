@@ -233,7 +233,7 @@ public class DeviceManagementActivity extends Activity {
         final String tag = TAG + " createReadTaskAsync";
 
         TaskRequest readTask = new TaskRequest();
-        readTask.dtid(ArtikCloudSession.DEVICE_TYPE_ID);
+        readTask.dtid(Config.DEVICE_TYPE_ID);
         readTask.dids(ArtikCloudSession.getInstance().getDeviceIDArray());
         readTask.taskType("R");
         readTask.setProperty("deviceProperties.device"); //set to read all properties from device
@@ -248,7 +248,7 @@ public class DeviceManagementActivity extends Activity {
         final String tag = TAG + " createWriteTaskAsync";
 
         TaskRequest writeDeviceTaskRequest = new TaskRequest();
-        writeDeviceTaskRequest.dtid(ArtikCloudSession.DEVICE_TYPE_ID);
+        writeDeviceTaskRequest.dtid(Config.DEVICE_TYPE_ID);
         writeDeviceTaskRequest.dids(ArtikCloudSession.getInstance().getDeviceIDArray());
         writeDeviceTaskRequest.taskType("W");
         writeDeviceTaskRequest.setProperty("deviceProperties.device.timezone");
@@ -265,7 +265,7 @@ public class DeviceManagementActivity extends Activity {
         final String tag = TAG + " createRebootTaskAsync";
 
         TaskRequest rebootTaskRequest = new TaskRequest();
-        rebootTaskRequest.dtid(ArtikCloudSession.DEVICE_TYPE_ID);
+        rebootTaskRequest.dtid(Config.DEVICE_TYPE_ID);
         rebootTaskRequest.dids(ArtikCloudSession.getInstance().getDeviceIDArray());
         rebootTaskRequest.taskType("E");
         rebootTaskRequest.setProperty("deviceProperties.device.reboot");
@@ -304,7 +304,6 @@ public class DeviceManagementActivity extends Activity {
         } catch (ApiException exc) {
                 processFailure(tag, exc);
         }
-
     }
 
 ///// Helpers
