@@ -20,9 +20,9 @@ After completing this sample, you will learn how to use [ARTIK Cloud device mana
  2. Enable [Device Management Properties](https://developer.artik.cloud/documentation/advanced-features/device-management.html#device-management-in-the-developer-dashboard) for your device type. You do this in the [Device Type Dashboard](https://developer.artik.cloud/dashboard/devicetypes)—> Select Your Device Type —> Select Device Management —> Click "Enable Device Properties".
 
  3. Follow [these instructions](https://developer.artik.cloud/documentation/tools/web-tools.html#creating-an-application) to create an application. For this Android app, select the following:
- - Under “AUTHORIZATION METHODS”, check “Client credentials, auth code, implicit”.
- - Set “AUTH REDIRECT URL” to myapp://redirect.
- - Under “PERMISSIONS”, check “Read” for “Profile”.
+  - Under “AUTHORIZATION METHODS”, check “Client credentials, auth code, implicit”.
+  - Set “AUTH REDIRECT URL” to myapp://redirect.
+  - Under “PERMISSIONS”, check “Read” for “Profile”.
  Get the [client ID](https://developer.artik.cloud/documentation/tools/web-tools.html#how-to-find-your-application-id), which you will need later.
 
  4. At [My ARTIK Cloud](https://my.artik.cloud/), [Connect a device](https://developer.artik.cloud/documentation/tools/web-tools.html#connecting-a-device) (or use the one you already own) of the device type. Get the [device ID and token](https://developer.artik.cloud/documentation/tools/web-tools.html#managing-a-device-token), which you will need later.
@@ -43,11 +43,15 @@ Now build the project, which will download the ARTIK Cloud SDK JAR from [Maven C
    %> akc_client -n -u coaps://coaps-api.artik.cloud:5686 -d YOUR_DEVICE_ID -t YOUR_DEVICE_TOKEN
    ```
    The device (lwm2m client) is now connected to ARTIK Cloud. Once the device receives and responds to the LWM2M operations from ARTIK Cloud, it prints out the info in the terminal. 
+
  2. Launch the app on your Android phone. 
+
  3. Login using your account. <br />
    ![Login](./img/screen_1_login.png)
+
  4. Click "READ PROPERTIES FROM ARTIK Cloud" to get the properties of the device from [Device Mirror](https://developer.artik.cloud/documentation/advanced-features/device-management.html#device-mirror) in ARTIK Cloud. Some properties are shown on the screen as the following: <br />
    ![getProperties](./img/screen_2_readPropFromAKC.png)
+
  5. Click one of the three buttons on the top to request reading the properties from, writing a new timezone to, or rebooting the remote LWM2M device. The following shows the case of writing "America/Los_Angeles" timezone to the device. The remote LWM2M device acts on operation as following output in the terminal:
  
    ```
@@ -55,6 +59,7 @@ Now build the project, which will download the ARTIK Cloud SDK JAR from [Maven C
    ```
    On the Andriod app, click "READ PROPERTIES FROM ARTIK Cloud" and observe that the response from ARTIK Cloud confirms that the timezone has changed on device and on Device Mirror of ARTIK Cloud.<br />
    ![writeToDevice](./img/screen_3_writePropToDevice.png)
+
  6. Go to Developer Dashboard and see the status of the tasks initiated by the Android app as the following:<br />
 ![Task status in Developer Dashboard](./img/devdashboard_task_result.png)
 
