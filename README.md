@@ -27,7 +27,7 @@ After completing this sample, you will learn how to use [ARTIK Cloud device mana
  
  Get the [client ID](https://developer.artik.cloud/documentation/tools/web-tools.html#how-to-find-your-application-id), which you will need later.
 
- 4. At [My ARTIK Cloud](https://my.artik.cloud/), [Connect a device](https://developer.artik.cloud/documentation/tools/web-tools.html#connecting-a-device) (or use the one you already own) of the above device type. Get the [device ID and token](https://developer.artik.cloud/documentation/tools/web-tools.html#managing-a-device-token), which you will need later.
+ 4. At [My ARTIK Cloud](https://my.artik.cloud/), [Connect a device](https://developer.artik.cloud/documentation/tools/web-tools.html#connecting-a-device) (or use the one you already own) of the above device type. Get the [device ID, device type ID, and token](https://developer.artik.cloud/documentation/tools/web-tools.html#managing-a-device-token), which you will need later.
 
 ### Setup LWM2M client simulator
 
